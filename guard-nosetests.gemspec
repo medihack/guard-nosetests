@@ -1,16 +1,18 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'guard-nosetests/version'
+require 'guard/nosetests/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "guard-nosetests"
   gem.version       = Guard::Nosetests::VERSION
-  gem.authors       = ["medihack"]
+  gem.authors       = ["Kai Schlamp"]
   gem.email         = ["schlamp@gmx.de"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Automatically run your Python Nose tests}
+  gem.summary       = %q{Guard gem for Nose tests}
   gem.homepage      = ""
+
+  gem.add_dependency 'guard', '>= 1.1'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

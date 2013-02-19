@@ -1,0 +1,3 @@
+guard 'nosetests' do
+  watch(%r{^.*/test_\w+\.py$})
+end
