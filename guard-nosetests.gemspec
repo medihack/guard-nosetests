@@ -5,11 +5,11 @@ require 'guard/nosetests/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "guard-nosetests"
-  gem.version       = Guard::Nosetests::VERSION
+  gem.version       = Guard::NosetestsVersion::VERSION
   gem.authors       = ["Kai Schlamp"]
   gem.email         = ["schlamp@gmx.de"]
-  gem.description   = %q{Automatically run your Python Nose tests}
-  gem.summary       = %q{Guard gem for Nose tests}
+  gem.description   = %q{Automatically run your Python nose tests}
+  gem.summary       = %q{Guard gem for Python nose tests}
   gem.homepage      = ""
 
   gem.add_dependency 'guard', '>= 1.1'
