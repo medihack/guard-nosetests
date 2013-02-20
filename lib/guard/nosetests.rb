@@ -1,6 +1,5 @@
 require "guard"
 require "guard/guard"
-require "nosetests"
 
 module Guard
   class Nosetests < Guard
