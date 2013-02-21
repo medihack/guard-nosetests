@@ -1,29 +1,93 @@
 # Guard::Nosetests
 
-TODO: Write a gem description
+Guard::Nosetests allows to automatically & intelligently launch tests with the
+[nose (testing for Python)](https://nose.readthedocs.org/en/latest/) when files are modified.
 
-## Installation
+## Install
 
-Add this line to your application's Gemfile:
+Please be sure to have [Guard](http://github.com/guard/guard) installed before continue.
 
-    gem 'guard-nosetests'
+The simplest way to install Guard::Nosetests is to use [Bundler](http://gembundler.com/).
 
-And then execute:
+Add Guard::Nosetests to your `Gemfile`:
 
-    $ bundle
+```ruby
+group :development do
+  gem 'guard-nosetests'
+end
+```
 
-Or install it yourself as:
+and install it by running Bundler:
 
-    $ gem install guard-nosetests
+```bash
+$ bundle
+```
+
+Add guard definition to your Guardfile by running the following command:
+
+```bash
+guard init nosetests
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Please read [Guard usage doc](http://github.com/guard/guard#readme)
 
-## Contributing
+## Guardfile
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Guard::Nosetests can be really adapated to all kind of projects.
+Please read [guard doc](http://github.com/guard/guard#readme) for more info about Guardfile DSL.
+
+### Standard Guardfile when using Nosetests
+
+```ruby
+guard 'nosetests' do
+  watch(%r{^.*/test_\w+\.py$})
+end
+```
+
+## Options
+
+You can change the default location and pattern of minitest files:
+
+```ruby
+guard 'nosetests', test_paths: ['test'] do
+  # ...
+end
+```
+
+You can pass any of the standard nosetests CLI options using the :cli option:
+
+```ruby
+guard 'nosetests', :cli => "--nocapture" do
+  # ...
+end
+```
+
+### List of available options:
+
+```ruby
+:cli => '--nocapture'       # pass arbitrary nosetests CLI arguments, default: ''
+:test_paths => ['test']     # specify an array of paths that contain test files, default: %w[test]
+:all_on_start => false      # run all tests in group on startup, default: true
+```
+
+## Development
+
+* Source hosted at [GitHub](https://github.com/medihack/guard-nosetests).
+
+Pull requests are very welcome! Please try to follow these simple rules if applicable:
+
+* Please create a topic branch for every separate change you make.
+* Make sure your patches are well tested. All specs run by Travis CI must pass.
+* Update the [README](https://github.com/medihack/guard-nosetests/blob/master/README.md).
+* Please **do not change** the version number.
+
+## TODO
+
+* Write some spec.
+* Provide some guard-rspec features, like focus_on_failed or all_after_pass.
+
+## Author
+
+[Kai Schlamp](https://github.com/medihack)
