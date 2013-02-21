@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["schlamp@gmx.de"]
   gem.description   = %q{Automatically run your Python nose tests}
   gem.summary       = %q{Guard gem for Python nose tests}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/medihack/guard-nosetests"
 
   gem.add_dependency 'guard', '>= 1.1'
 
