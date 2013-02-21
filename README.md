@@ -85,7 +85,8 @@ Pull requests are very welcome! Please try to follow these simple rules if appli
 
 ## TODO
 
-* Write some spec.
+* More information in the notification (maybe by parsing the nosetests output).
+* Write some specs.
 * Provide some guard-rspec features, like focus_on_failed or all_after_pass.
 
 ## Author
