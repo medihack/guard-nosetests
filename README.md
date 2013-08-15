@@ -13,7 +13,7 @@ Add Guard::Nosetests to your `Gemfile`:
 
 ```ruby
 group :development do
-  gem 'guard-nosetests'
+  gem 'guard-nosetests', :git => 'https://github.com/medihack/guard-nosetests.git'
 end
 ```
 
